@@ -2,7 +2,7 @@
 Project: 		Effects of Job Displacement on Prescription Opiate Use: Evidence 
 		 		from the Medical Expenditure Panel Survey.
 Created by: 	Dustin Swonder
-Last modified: 	02/19/2019
+Last modified: 	04/05/2019
 Description: 	This do-file makes appendix figures for the paper.
 *******************************************************************************/
 
@@ -100,11 +100,11 @@ foreach variable in EVERUSEDOPDS HAD6PLUSOPDPRSC HAD12PLUSOPDPRSC EVER60MME ///
 	}
 	
 	twoway (scatter `variable' PRIMARY_YEAR if inrange(PRIMARY_YEAR, `minyear', 2017) & ///
-			EMPSTATUS == 1, c(l) lpattern(1) lcolor(maroon) ms(o) mcolor(maroon)) ///
+			EMPSTATUS == 1, c(l) lpattern(1) lcolor(maroon) ms(none) mcolor(maroon)) ///
 		(scatter `variable' PRIMARY_YEAR if inrange(PRIMARY_YEAR, `minyear', 2017) & ///
-			EMPSTATUS == 2, c(l) lpattern(_) lcolor(maroon) ms(o) mcolor(maroon)) ///
+			EMPSTATUS == 2, c(l) lpattern(_) lcolor(maroon) ms(none) mcolor(maroon)) ///
 		(scatter `variable' PRIMARY_YEAR if inrange(PRIMARY_YEAR, `minyear', 2017) & ///
-			EMPSTATUS == 3, c(l) lpattern(-) lcolor(maroon) ms(o) mcolor(maroon)), ///
+			EMPSTATUS == 3, c(l) lpattern(-) lcolor(maroon) ms(none) mcolor(maroon)), ///
 		$gpr legend(label(1 "Always worked during MEPS particip.") ///
 			label(2 "Sometimes worked during MEPS particip.") ///
 			label(3 "Never worked during MEPS particip.") region(lcolor(white)) rows(3)) ///

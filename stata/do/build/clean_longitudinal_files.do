@@ -2,7 +2,7 @@
 Project: Effects of Job Displacement on Prescription Opiate Use: Evidence from 
 		 the Medical Expenditure Panel Survey
 Created by: Dustin Swonder
-Last modified: 	02/09/2020
+Last modified: 	04/12/2020
 Description: This .do file prepares merged longitudinal data files for analysis
 			 by reformatting variables of interest. It outputs a data file which
 			 is ready to merge with Prescribed Medicines data files for 
@@ -15,7 +15,7 @@ Description: This .do file prepares merged longitudinal data files for analysis
 
 capture log close
 log using $logdir/clean_longitudinal_files.log, replace
-clear all
+clear
 
 /*******************************************************************************
 	LOAD IN DATA

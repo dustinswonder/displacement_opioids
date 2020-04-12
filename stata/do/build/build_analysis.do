@@ -2,7 +2,7 @@
 Project: Effects of Job Displacement on Prescription Opiate Use: Evidence from 
 		 the Medical Expenditure Panel Survey
 Created by: 	Dustin Swonder
-Last modified: 	02/09/2020
+Last modified: 	04/11/2020
 Description: This .do file merges clean longitudinal data with clean, collapsed
 			 Prescribed Medicines data to produce analysis data.
 *******************************************************************************/
@@ -97,3 +97,16 @@ compress
 save "$dtadir/analysis.dta", replace
 
 log close
+
+/*******************************************************************************
+	Compute attrition by inclusion in analysis sample
+*******************************************************************************/
+
+destring RURSLT?, replace
+gen attrited = (RURSLT1 != 60) | (RURSLT2 != 60) | (RURSLT3 != 60) | (RURSLT4 != 60) ///
+				| (RURSLT5 != 60)
+
+summ attrited [aw = LONGWT]
+
+summ attrited [aw = LONGWT] if sample == 1
+

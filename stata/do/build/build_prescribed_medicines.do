@@ -2,7 +2,7 @@
 Project: Effects of Job Displacement on Prescription Opiate Use: Evidence from 
 		 the Medical Expenditure Panel Survey
 Created by: 	Dustin Swonder
-Last modified: 	01/25/2020
+Last modified: 	04/12/2020
 Description: This .do file appends Prescribed Medicines files across years, 
 			 giving a pool of all prescription records ever prescribed to MEPS 
 			 survey participants from 1996-2017. The records are cleaned as 
@@ -16,7 +16,7 @@ Description: This .do file appends Prescribed Medicines files across years,
 *******************************************************************************/
 
 capture log close
-clear all
+clear
 
 /*******************************************************************************
 	(0.1) RUN STATA PROGRAMMING STATEMENTS TO GET RAW PRESCRIBED MEDICINES FILES 
@@ -84,6 +84,10 @@ sort RXNAME
 rename OPIATE_COMPONENT OPD_COMPONENT_rxname
 
 keep RXNAME NONPROPRIETARYNAME OPD_COMPONENT_rxname
+
+foreach var of varlist * {
+	replace `var' = rtrim(ltrim(`var'))
+}
 
 save "$dtadir/opioidlist.dta", replace
 

@@ -1,6 +1,6 @@
 Replication folder for "Effects of Job Displacement on Prescription Opioid Demand: Evidence from the Medical Expenditure Panel Survey" by Dustin Swonder
 
-Last modified 2/23/2020
+Last modified 4/12/2020
 
 Structure:
 	1. SETUP
@@ -13,7 +13,7 @@ Please cite this paper if you use data or code from this folder.
 
 1. SETUP
 
-This folder contains all necessary data and code to replicate the exhibits and analysis in my working paper draft as of 2/19/2020. I have run all the analysis code for this paper on Stata MP 15.1. 
+This folder contains all necessary data and code to replicate the exhibits and analysis in my working paper draft as of 4/12/2020. I have run all the analysis code for this paper on Stata MP 15.1. 
 
 Create a folder entitled "replication" in the folder in which you want to run the code. Structure, the folder as follows:
 	- replication
@@ -37,7 +37,7 @@ Create a folder entitled "replication" in the folder in which you want to run th
 				- multum_lexicon
 				- prescribed_medicines
 
-Download the files in the github folder "stata/do" into the stata/do folder you've set up, and donate the files in the github "data" folder to the data folder you've set up.
+Download the files in the github folder "stata/do" into the stata/do folder you've set up, and download the files in the github "data" folder to the data folder you've set up.
 
 -------
 
